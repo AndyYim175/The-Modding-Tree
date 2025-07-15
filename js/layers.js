@@ -267,7 +267,7 @@ addLayer("e", {
                                             // Also the amount required to unlock the layer.
 
     type: "normal",                         // Determines the formula used for calculating prestige currency.
-    exponent: 0.1,                          // "normal" prestige gain is (currency^exponent).
+    exponent: 0.75,                          // "normal" prestige gain is (currency^exponent).
 
     gainMult() {                            // Returns your multiplier to your gain of the prestige resource.
         return new Decimal(1)               // Factor in any bonuses multiplying gain here.
@@ -304,6 +304,32 @@ addLayer("e", {
             description: "10% more points",
             cost: new Decimal(0.45),
         },
+        16: {
+            title: "Boost tier 2",
+            description: "20% more points",
+            cost: new Decimal(16),
+        },
+        17: {
+            title: "Boost tier 2",
+            description: "20% more points",
+            cost: new Decimal(24),
+        },
+        18: {
+            title: "Boost tier 2",
+            description: "20% more points",
+            cost: new Decimal(36),
+        },
+        19: {
+            title: "Boost tier 2",
+            description: "20% more points",
+            cost: new Decimal(54),
+        },
+        20: {
+            title: "Boost tier 2",
+            description: "20% more points",
+            cost: new Decimal(81),
+        },
+        
         // Look in the upgrades docs to see what goes here!
     },
     infoboxes: {
