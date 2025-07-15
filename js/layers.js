@@ -35,6 +35,7 @@ addLayer("p", {
         
         
     },
+
     upgrades: {
         11: {
             title: "The beginning",
@@ -121,11 +122,11 @@ addLayer("*", {
     baseResource: "points",                 // The name of the resource your prestige gain is based on.
     baseAmount() { return player.points },  // A function to return the current amount of baseResource.
 
-    requires: new Decimal(50),              // The amount of the base needed to  gain 1 of the prestige currency.
+    requires: new Decimal(25),              // The amount of the base needed to  gain 1 of the prestige currency.
                                             // Also the amount required to unlock the layer.
 
     type: "normal",                         // Determines the formula used for calculating prestige currency.
-    exponent: 0.6,                          // "normal" prestige gain is (currency^exponent).
+    exponent: 0.68,                          // "normal" prestige gain is (currency^exponent).
 
     gainMult() {                            // Returns your multiplier to your gain of the prestige resource.
         return new Decimal(1)
@@ -137,6 +138,12 @@ addLayer("*", {
 
     layerShown() { return true },          // Returns a bool for if this layer's node should be visible in the tree.
 
+    infoboxes: {
+        lore: {
+            title: "Prestiges",
+            body() { return "This is a prestige. Reset ALL of your progress in the top layer to get powerful upgrades based on what you made." },
+        },
+    },
     upgrades: {
         21: {
             title: "Point 1",
@@ -225,11 +232,11 @@ addLayer("#", {
     baseResource: "points",                 // The name of the resource your prestige gain is based on.
     baseAmount() { return player.points },  // A function to return the current amount of baseResource.
 
-    requires: new Decimal(100000),              // The amount of the base needed to  gain 1 of the prestige currency.
+    requires: new Decimal(1000000000),              // The amount of the base needed to  gain 1 of the prestige currency.
                                             // Also the amount required to unlock the layer.
 
     type: "normal",                         // Determines the formula used for calculating prestige currency.
-    exponent: 1.2,                          // "normal" prestige gain is (currency^exponent).
+    exponent: 0.8,                          // "normal" prestige gain is (currency^exponent).
 
     gainMult() {                            // Returns your multiplier to your gain of the prestige resource.
         return new Decimal(1)
@@ -324,13 +331,36 @@ addLayer("e", {
             description: "20% more points",
             cost: new Decimal(54),
         },
-        20: {
+        21: {
             title: "Boost tier 2",
             description: "20% more points",
             cost: new Decimal(81),
         },
-        
-        // Look in the upgrades docs to see what goes here!
+        22: {
+            title: "Boost tier 3",
+            description: "30% more points",
+            cost: new Decimal(1200),
+        },
+        23: {
+            title: "Boost tier 3",
+            description: "30% more points",
+            cost: new Decimal(2400),
+        },
+        24: {
+            title: "Boost tier 3",
+            description: "30% more points",
+            cost: new Decimal(3600),
+        },
+        25: {
+            title: "Boost tier 3",
+            description: "30% more points",
+            cost: new Decimal(5400),
+        },
+        26: {
+            title: "Boost tier 3",
+            description: "30% more points",
+            cost: new Decimal(8100),
+        },
     },
     infoboxes: {
         lore: {
@@ -340,5 +370,14 @@ addLayer("e", {
         },
         
     },
+    challenges: {
+        11: {
+            name: "Ouch",
+            challengeDescription: "description of ouchie",
+            canComplete: function() {return player.points.gte(100)},
+            
+        },
+        
+    }
     
 })
